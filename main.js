@@ -9,10 +9,10 @@
   var timeToadd = 0;
 
 function updateTimeText(){
-  var h = Math.floor(elapsedTime / 60000 / 60);
-  var m = Math.floor(elapsedTime / 60000);
-  var s = Math.floor(elapsedTime % 60000 / 1000);
-  var ms = elapsedTime % 1000;
+  var h = Math.floor(elapsedTime / 1000 / 60 / 60 );
+  var m = Math.floor(elapsedTime / 1000 / 60 % 60 );
+  var s = Math.floor(elapsedTime / 1000 % 60 );
+  var ms = elapsedTime - m * 1000 * 60 - s * 1000;
 
       h = ("" + h).slice(-2);
       m = ("" + m).slice(-2); 
